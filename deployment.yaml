@@ -14,7 +14,7 @@ spec:
       spec:
         containers:
         - name: whatsappclone
-          image: testwhatsappcloneacr.azurecr.io/whatsappclone:latest
+          image: testwhatsappcloneacr.azurecr.io/testwhatsappclone:a133ce88f70d0ccf5945f8c88bf3e310628ce89d
           imagePullPolicy: Always
           readinessProbe:
             httpGet:
