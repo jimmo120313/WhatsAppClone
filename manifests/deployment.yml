@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testwhatsappclone-72cd"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testwhatsappclone-72cd"
+  template:
+    metadata:
+      labels:
+        app: "testwhatsappclone-72cd"
+    spec:
+      containers:
+        - name: "testwhatsappclone-72cd"
+          image: "testwhatsappcloneacr.azurecr.io/testwhatsappclone"
+          ports:
+          - containerPort: 80
