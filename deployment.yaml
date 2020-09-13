@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whatsappclone
+spec:
+  selector:
+      matchLabels:
+        app: whatsappclone
+  replicas: 3
+  template:
+      metadata:
+        labels:
+            app: whatsappclone
+      spec:
+        containers:
+        - name: whatsappclone
+          image: testwhatsappcloneacr.azurecr.io/whatsappclone:latest
+          imagePullPolicy: Always
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
