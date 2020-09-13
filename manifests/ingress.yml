@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "testwhatsappclone-72cd"
+    labels:
+        app: "testwhatsappclone-72cd"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: testwhatsappclone3209-testwhatsappclone-72cd.804a5590de3d4c70a3d1.australiasoutheast.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "testwhatsappclone-72cd"
+                servicePort: 80
